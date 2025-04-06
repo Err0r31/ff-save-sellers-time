@@ -1,0 +1,148 @@
+@use "../../../scss/_variables" as *;
+
+.categories {
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__title {
+        font-size: 2.4rem;
+        margin-bottom: 5px;
+    }
+
+    &__category {
+        display: flex;
+        flex-direction: column;
+        border-radius: 8px;
+    }
+
+    &__summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        background-color: $background-color-lighter-10;
+        padding: 16px;
+        border: 1px solid $background-color-lighter-10;
+        border-radius: 8px;
+        font-size: 1.8rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            border-color: $border-color;
+        }
+    }
+
+    &__category[open] .categories__summary {
+        border-radius: 8px 8px 0 0;
+    }
+
+    &__categoryButton {
+        padding: 5px 10px;
+        border: none;
+        border-radius: 4px;
+        color: $main-text-color;
+        background-color: $primary;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: $primary-darker;
+        }
+    }
+
+    &__services {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        background-color: $background-color-lighter-5;
+        border-radius: 0 0 8px 8px;
+    }
+
+    &__service {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: center;
+        padding: 16px;
+    }
+
+    &__serviceInfo {
+        display: flex;
+        justify-content: space-between;
+        gap: 5px;
+        flex: 1;
+        align-items: center;
+    }
+
+    &__servicePrice {
+        font-weight: 500;
+    }
+
+    &__serviceButtons {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    &__editButton,
+    &__deleteButton {
+        padding: 5px 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    &__editButton {
+        background-color: $primary;
+
+        &:hover {
+            background-color: $primary-darker;
+        }
+    }
+
+    &__deleteButton {
+        background-color: $danger-color;
+
+        &:hover {
+            background-color: $danger-color-darker;
+        }
+    }
+
+    &__editIcon,
+    &__deleteIcon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.modal {
+    &__formField {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    &__formLabel {
+        pointer-events: none;
+    }
+
+    &__formInput {
+        padding: 8px 10px;
+        border-radius: 4px;
+        border: 1px solid $border-color;
+        background-color: $background-color-lighter-10;
+        color: $main-text-color;
+        transition: all 0.3s ease;
+
+        &:hover,
+        &:focus {
+            outline: none;
+            border-color: $primary;
+        }
+    }
+}

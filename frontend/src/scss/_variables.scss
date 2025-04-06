@@ -1,0 +1,24 @@
+@use "sass:color";
+
+// Colors 
+$background-color: #292929;
+$background-color-darker-10: color.adjust($background-color, $lightness: -10%);
+$background-color-lighter-5: color.adjust($background-color, $lightness: 5%);
+$background-color-lighter-10: color.adjust($background-color, $lightness: 10%);
+
+$main-text-color: #ffffff;
+
+$primary: #788475;
+$primary-darker: color.adjust($primary, $lightness: -10%);
+$primary-lighter: color.adjust($primary, $lightness: 10%);
+
+$danger-color: #dc3545;
+$danger-color-darker: #a71d2a;
+
+$border-color: #dee2e6;
+$input-bg: #3a3a3a;
+
+
+
+// Typography 
+$ff-montserrat: "Montserrat", "Arial", sans-serif;

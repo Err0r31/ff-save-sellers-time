@@ -1,0 +1,73 @@
+@use "../../../scss/_variables" as *;
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;   
+    background: $background-color-lighter-10;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+
+    &__title {
+        font-size: 2rem;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+
+    &__submitButton,
+    &__cancelButton {
+        color: $main-text-color;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    &__submitButton {
+        background-color: $primary;
+
+        &:hover {
+            background-color: $primary-darker;
+        }
+    }
+
+    &__cancelButton {
+        background-color: $danger-color;
+        
+        &:hover {
+            background-color: $danger-color-darker;
+        }
+    }
+}

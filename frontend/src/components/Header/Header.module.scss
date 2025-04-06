@@ -1,0 +1,47 @@
+@use "../../scss/variables" as *;
+
+.header {
+    padding: 20px 0 10px;
+    border-bottom: 1px solid #fff;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 50px;
+    }
+
+    &__logoLink {
+        display: flex;
+    }
+
+    &__logoIcon {
+        width: 250px;
+        height: 80px;
+        transition: all 0.3s ease;
+    }
+
+    &__logoIcon:hover,
+    &__logoIcon:focus {
+        transform: scale(1.05);
+    }
+
+    &__nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        align-items: center;
+    }
+
+    &__navItem {
+        transition: all 0.3s ease-in;
+        text-decoration: underline;
+        text-decoration-color: $background-color;
+    }
+
+    &__navItem:hover,
+    &__navItem:focus {
+        text-decoration-color: #ffffff;
+        outline: none;
+    }
+}

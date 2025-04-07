@@ -1,15 +1,35 @@
 {
     "version": 2,
     "builds": [
-      {
-        "src": "frontend/dist/**",
-        "use": "@vercel/static"
-      }
+        {
+           "src": "frontend/dist/**",
+           "use": "@vercel/static" 
+        },
+        {
+            "src": "backend/app.js",
+            "use": "@vercel/node"
+        }
     ],
     "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "frontend/dist/$1"
-      }
+        {
+            "src": "/auth/(.*)",
+            "dest": "backend/app.js"
+        },
+        {
+            "src": "/categories(.*)",
+            "dest": "backend/app.js"
+        },
+        {
+            "src": "/cities(.*)",
+            "dest": "backend/app.js"
+        },
+        {
+            "src": "/admin",
+            "dest": "backend/app.js"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "frontend/dist/$1"
+        }
     ]
-  }
+}

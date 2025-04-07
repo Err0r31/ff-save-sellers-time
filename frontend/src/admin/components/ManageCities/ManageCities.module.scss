@@ -1,0 +1,128 @@
+@use "../../../scss/_variables" as *;
+
+.cities {
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__title {
+        font-size: 2.4rem;
+        margin-bottom: 5px;
+    }
+
+    &__city {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__summary { 
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        background-color: $background-color-lighter-10;
+        padding: 16px;
+        border: 1px solid $background-color-lighter-10;
+        border-radius: 8px;
+        font-size: 1.8rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            border-color: $border-color;
+        }
+    }
+
+    &__city[open] .cities__summary {
+        border-radius: 8px 8px 0 0;
+    }
+
+    &__details {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+        background-color: $background-color-lighter-5;
+        border-radius: 0 0 8px 8px;
+        padding: 16px;
+    }
+
+    &__prices,
+    &__days {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__pricesTitleWrapper,
+    &__daysTitleWrapper {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    &__pricesTitle,
+    &__daysTitle {
+        font-size: 1.8rem;
+    }
+
+    &__editButton {
+        padding: 4px 8px;
+        border: none;
+        border-radius: 4px;
+        color: $main-text-color;
+        background-color: $primary;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: $primary-darker;
+        }
+    }
+
+    &__editIcon {
+        width: 20px;
+        height: 20px;
+    }
+
+    &__pricesList {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__daysSection {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+.modal {
+    &__formField {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__formLabel {
+        pointer-events: none;
+    }
+
+    &__formInput {
+        padding: 8px 10px;
+        border-radius: 4px;
+        border: 1px solid $border-color;
+        background-color: $background-color-lighter-10;
+        color: $main-text-color;
+        transition: all 0.3s ease;
+
+        &:hover,
+        &:focus {
+            outline: none;
+            border-color: $primary;
+        }
+    }
+}

@@ -1,0 +1,73 @@
+@use "variables";
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: variables.$ff-montserrat;
+    color: variables.$main-text-color;
+    background: variables.$background-color;
+    font-size: 1.6rem;
+}
+
+main {
+    flex-grow: 1;
+}
+
+img {
+    display: block;
+    height: auto;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+    color: variables.$main-text-color;
+}
+
+h1,
+h2,
+h3,
+ul,
+li,
+p,
+button,
+fieldset {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset {
+    border: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+button,
+input {
+    font-family: variables.$ff-montserrat;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}

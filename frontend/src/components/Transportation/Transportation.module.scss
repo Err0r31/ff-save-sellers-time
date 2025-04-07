@@ -1,0 +1,76 @@
+@use "../../scss/variables" as *;
+
+.transportation {
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    &__title {
+        font-size: 3.6rem;
+    }
+
+    &__cities {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    &__city {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    &__cityTitle {
+        font-weight: 600;
+        font-size: 2.4rem;
+    }
+
+    &__blocks {
+        display: flex;
+        gap: 40px;
+    }
+
+    &__block {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+        border-radius: 20px;
+        background-color: $primary;
+    }
+
+    &__blockTitle {
+        font-size: 20px;
+    }
+
+    &__blockList {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__blockVertical {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 15px;
+        border-radius: 20px;
+        background-color: $primary;
+    }
+
+    &__shipment,
+    &__delivery {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    &__blockVertical .transportation__blockItem {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+}

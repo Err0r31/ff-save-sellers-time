@@ -1,0 +1,25 @@
+@use '../../../scss/_variables' as *;
+
+.header {
+    padding: 20px 0;
+
+    &__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+
+    &__link {
+        color: $primary;
+        font-size: 1.6rem;
+        transition: all 0.3s ease;
+
+        &:focus,
+        &:hover {
+            text-decoration: underline;
+            color: darken($primary, 10%);
+        }
+    }
+}

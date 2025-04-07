@@ -12,9 +12,10 @@ const PORT = process.env.PORT || 5000;
 
 const app = express();
 
-if (process.env.NODE_ENV !== "production") {
-  app.use(cors());
-}
+app.use(cors({
+  origin: "https://save-sellers-time.onrender.com/",
+  credentials: true,
+}));
 
 app.use(express.json());
 

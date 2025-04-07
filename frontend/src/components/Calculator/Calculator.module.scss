@@ -1,0 +1,119 @@
+@use "../../scss/variables" as *;
+
+.calculator {
+    margin-bottom: 40px;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    &__title {
+        font-size: 3.6rem;
+    }
+
+    &__controls {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 20px 15px;
+        width: 100%;
+        padding: 15px;
+        border: 1px solid $primary;
+        border-radius: 10px;
+    }
+
+    &__customInput {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &__label {
+        font-size: 1.6rem;
+        white-space: nowrap;
+        pointer-events: none;
+    }
+
+    &__input {
+        padding: 8px;
+        width: 100%;
+        max-width: 100px;
+        border: 1px solid $primary-lighter;
+        border-radius: 4px;
+        font-size: 1.6rem;
+        background: none;
+        color: $main-text-color;
+        transition: all 0.3s ease;
+
+        &:hover,
+        &:focus {
+            outline: none;
+            border-color: $primary-darker;
+        }
+    }
+
+    &__result {
+        grid-column: 2 / 3;
+    }
+
+    &__resultText {
+        font-size: 1.8rem;
+        text-align: right;
+    }
+
+    &__resultNumber {
+        font-weight: 500;
+    }
+}
+
+:global {
+    .react-select {
+        &__control {
+            border-radius: 4px;
+            padding: 2px;
+            width: 100%;
+            border: 1px solid $primary-lighter !important;
+            background-color: transparent !important;
+            color: $main-text-color !important;
+            transition: all 0.3s ease;
+
+            &--is-focused {
+                border-color: $primary-darker !important;
+                box-shadow: none !important;
+            }
+
+            &:hover {
+                border-color: $primary-darker !important;
+            }
+        }
+
+        &__placeholder,
+        &__indicator {
+            color: $main-text-color !important;
+        }
+
+        &__indicator-separator {
+            background-color: $main-text-color !important;
+        }
+
+        &__multi-value {
+            background-color: $primary !important;
+            max-width: 300px;
+        }
+
+        &__multi-value__label {
+            color: $main-text-color !important;
+        }
+
+        &__menu-list {
+            background-color: $background-color-lighter-10;
+        }
+
+        &__option {
+            &--is-focused {
+                background-color: $primary !important;
+            }
+        }
+    }
+}

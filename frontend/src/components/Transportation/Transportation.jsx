@@ -26,7 +26,7 @@ export default function Transportation() {
   }, []);
 
   return (
-    <div className={styles.transportation}>
+    <div className={styles.transportation} id="transportation">
       <div className="container">
         <div className={styles.transportation__wrapper}>
           <h1 className={styles.transportation__title}>Цены перевозки</h1>

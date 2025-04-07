@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Calculator from "../Calculator/Calculator";
 import styles from "./Services.module.scss";
 
 export default function Services() {
@@ -24,8 +25,31 @@ export default function Services() {
     getCategories();
   }, []);
 
+  const parsePrice = (price) => {
+    if (typeof price === "number") return price;
+
+    if (typeof price !== "string") return null;
+
+    const cleanedPrice = price.replace(/[^0-9]/g, "").replace(/^0+/, "");
+
+    if (!cleanedPrice) return null;
+
+    return parseInt(cleanedPrice, 10);
+  };
+
+  const allServices = categories
+    .flatMap((category) =>
+      category.services.map((service, index) => ({
+        id: `${category.id}-service-${index}`,
+        name: service.name,
+        price: parsePrice(service.price),
+      }))
+    )
+    .filter((service) => service.price !== null);
+
   return (
-    <div className={styles.services}>
+    <>
+    <div className={styles.services} id="services">
       <div className="container">
         <div className={styles.services__wrapper}>
           <h1 className={styles.services__title}>Услуги</h1>
@@ -53,5 +77,7 @@ export default function Services() {
         </div>
       </div>
     </div>
+    <Calculator services={allServices} />
+    </>
   );
 }

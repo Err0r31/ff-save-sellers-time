@@ -19,7 +19,7 @@
         &:focus,
         &:hover {
             text-decoration: underline;
-            color: darken($primary, 10%);
+            color: $primary-darker;
         }
     }
 }

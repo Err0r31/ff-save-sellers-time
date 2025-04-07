@@ -10,13 +10,13 @@ export default function Header() {
             <SpriteIcon id="icon-logo" className={styles.header__logoIcon} />
           </a>
           <nav className={styles.header__nav}>
-            <a href="" className={styles.header__navItem}>
+            <a href="#transportation" className={styles.header__navItem}>
               Цены перевозки
             </a>
-            <a href="" className={styles.header__navItem}>
+            <a href="#services" className={styles.header__navItem}>
               Цены работы с упаковкой
             </a>
-            <a href="" className={styles.header__navItem}>
+            <a href="#calculator" className={styles.header__navItem}>
               Калькулятор
             </a>
           </nav>

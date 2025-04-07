@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 
 app.use(cors({
-  origin: "https://save-sellers-time.onrender.com/",
+  origin: "https://save-sellers-time.onrender.com",
   credentials: true,
 }));
 

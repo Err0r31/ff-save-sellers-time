@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import styles from "./AdminLogin.module.scss";
 
-export default function AdminLogin() {
+export default function AdminLogin({ setToken }) {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -25,6 +25,7 @@ export default function AdminLogin() {
       const data = await response.json();
       if (response.ok) {
         localStorage.setItem("token", data.token);
+        setToken(data.token)
         navigate("/admin/categories");
       } else {
         setError(data.message || "Ошибка авторизации");

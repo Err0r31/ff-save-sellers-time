@@ -1,75 +1,140 @@
 @use "../../scss/variables" as *;
+@use "../../scss/mixins" as *;
 
 .transportation {
     &__wrapper {
         display: flex;
+        display: -webkit-flex;
         flex-direction: column;
         gap: 40px;
+
+        @include mobile {
+            gap: 30px;
+        }
     }
 
     &__title {
         font-size: 3.6rem;
+
+        @include tablet {
+            font-size: 3rem;
+        }
+
+        @include mobile {
+            font-size: 2.4rem;
+        }
     }
 
     &__cities {
         display: flex;
+        display: -webkit-flex;
         flex-direction: column;
         gap: 30px;
+
+        @include mobile {
+            gap: 20px;
+        }
     }
 
     &__city {
         display: flex;
+        display: -webkit-flex;
         flex-direction: column;
         gap: 15px;
+
+        @include mobile {
+            gap: 10px;
+        }
     }
 
     &__cityTitle {
         font-weight: 600;
         font-size: 2.4rem;
+
+        @include tablet {
+            font-size: 2rem;
+        }
+
+        @include mobile {
+            font-size: 1.8rem;
+        }
     }
 
     &__blocks {
         display: flex;
+        display: -webkit-flex;
         gap: 40px;
+
+        @include tablet {
+            gap: 20px;
+        }
+
+        @include mobile {
+            flex-direction: column;
+            -webkit-flex-direction: column;
+            gap: 15px;
+        }
     }
 
     &__block {
         display: flex;
+        display: -webkit-flex;
         flex-direction: column;
         gap: 15px;
         padding: 15px;
         border-radius: 20px;
         background-color: $primary;
+        -webkit-box-sizing: border-box;
+
+        @include mobile {
+            padding: 10px;
+        }
     }
 
     &__blockTitle {
-        font-size: 20px;
+        font-size: 2rem;
+
+        @include mobile {
+            font-size: 1.8rem;
+        }
     }
 
     &__blockList {
         display: flex;
+        display: -webkit-flex;
         flex-direction: column;
         gap: 10px;
     }
 
     &__blockVertical {
         display: flex;
+        display: -webkit-flex;
         align-items: center;
         gap: 20px;
         padding: 15px;
         border-radius: 20px;
         background-color: $primary;
+
+        @include mobile {
+            flex-direction: column;
+            -webkit-flex-direction: column;
+            align-items: start;
+            gap: 15px;
+            padding: 10px;
+        }
     }
 
     &__shipment,
     &__delivery {
         display: flex;
+        display: -webkit-flex;
         flex-direction: column;
         gap: 15px;
     }
 
     &__blockVertical .transportation__blockItem {
         display: flex;
+        display: -webkit-flex;
         align-items: center;
         gap: 5px;
     }

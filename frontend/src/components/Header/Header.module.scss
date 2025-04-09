@@ -1,4 +1,5 @@
 @use "../../scss/variables" as *;
+@use "../../scss/mixins" as *;
 
 .header {
     padding: 20px 0 10px;
@@ -6,9 +7,20 @@
 
     &__wrapper {
         display: flex;
+        display: -webkit-flex;
         justify-content: space-between;
         align-items: center;
         gap: 50px;
+
+        @include tablet {
+            gap: 30px;
+        }
+
+        @include mobile {
+            gap: 20px;
+            flex-direction: column;
+            -webkit-flex-direction: column;
+        }
     }
 
     &__logoLink {
@@ -19,22 +31,42 @@
         width: 250px;
         height: 80px;
         transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+
+        @include tablet {
+            width: 200px;
+            height: 64px;
+        }
+
+        @include mobile {
+            width: 150px;
+            height: 48px;
+        }
     }
 
     &__logoIcon:hover,
     &__logoIcon:focus {
         transform: scale(1.05);
+        -webkit-transform: scale(1.05);
     }
 
     &__nav {
         display: flex;
+        display: -webkit-flex;
         flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
         gap: 20px;
         align-items: center;
+
+        @include mobile {
+            gap: 15px;
+            justify-content: center;
+        }
     }
 
     &__navItem {
         transition: all 0.3s ease-in;
+        -webkit-transition: all 0.3s ease-in;
         text-decoration: underline;
         text-decoration-color: $background-color;
     }

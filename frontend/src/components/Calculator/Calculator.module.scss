@@ -1,38 +1,77 @@
 @use "../../scss/variables" as *;
+@use "../../scss/mixins" as *;
 
 .calculator {
     margin-bottom: 40px;
 
     &__wrapper {
         display: flex;
+        display: -webkit-flex;
         flex-direction: column;
         gap: 40px;
+
+        @include mobile {
+            gap: 30px;
+        }
     }
 
     &__title {
         font-size: 3.6rem;
+
+        @include tablet {
+            font-size: 3rem;
+        }
+
+        @include mobile {
+            font-size: 2.4rem;
+        }
     }
 
     &__controls {
         display: grid;
+        display: -ms-grid;
+        display: -webkit-grid;
         grid-template-columns: 1fr auto;
         gap: 20px 15px;
         width: 100%;
         padding: 15px;
         border: 1px solid $primary;
         border-radius: 10px;
+
+        @include tablet {
+            gap: 15px 10px;
+            padding: 12px;
+        }
+
+        @include mobile {
+            grid-template-columns: 1fr;
+            gap: 10px;
+            padding: 10px;
+        }
     }
 
     &__customInput {
         display: flex;
+        display: -webkit-flex;
         align-items: center;
         gap: 8px;
+
+        @include mobile {
+            flex-direction: column;
+            -webkit-flex-direction: column;
+            align-items: flex-start;
+            gap: 5px;
+        }
     }
 
     &__label {
         font-size: 1.6rem;
         white-space: nowrap;
         pointer-events: none;
+
+        @include mobile {
+            font-size: 1.4rem;
+        }
     }
 
     &__input {
@@ -45,21 +84,36 @@
         background: none;
         color: $main-text-color;
         transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
 
         &:hover,
         &:focus {
             outline: none;
             border-color: $primary-darker;
         }
+
+        @include mobile {
+            max-width: none;
+            font-size: 1.4rem;
+        }
     }
 
     &__result {
         grid-column: 2 / 3;
+
+        @include mobile {
+            grid-column: 1 / 2;
+        }
     }
 
     &__resultText {
         font-size: 1.8rem;
         text-align: right;
+
+        @include mobile {
+            font-size: 1.6rem;
+            text-align: left;
+        }
     }
 
     &__resultNumber {
@@ -77,6 +131,7 @@
             background-color: transparent !important;
             color: $main-text-color !important;
             transition: all 0.3s ease;
+            -webkit-transition: all 0.3s ease;
 
             &--is-focused {
                 border-color: $primary-darker !important;
@@ -100,6 +155,10 @@
         &__multi-value {
             background-color: $primary !important;
             max-width: 300px;
+
+            @include mobile {
+                max-width: 200px;
+            }
         }
 
         &__multi-value__label {

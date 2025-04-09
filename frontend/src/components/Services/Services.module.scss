@@ -1,26 +1,47 @@
 @use "../../scss/variables" as *;
+@use "../../scss/mixins" as *;
 
 .services {
     &__wrapper {
         display: flex;
         flex-direction: column;
         gap: 40px;
+
+        @include mobile {
+            gap: 30px;
+        }
     }
 
     &__title {
         font-size: 3.6rem;
+
+        @include tablet {
+            font-size: 3rem;
+        }
+
+        @include mobile {
+            font-size: 2.4rem;
+        }
     }
 
     &__list {
         display: flex;
         flex-direction: column;
         gap: 30px;
+
+        @include mobile {
+            gap: 20px;
+        }
     }
 
     &__item {
         display: flex;
         flex-direction: column;
         gap: 20px;
+
+        @include mobile {
+            gap: 15px;
+        }
     }
 
     &__subtitle {
@@ -30,12 +51,26 @@
         border-radius: 10px;
         padding: 15px;
         text-align: center;
+
+        @include tablet {
+            font-size: 2rem;
+            padding: 12px;
+        }
+
+        @include mobile {
+            font-size: 1.8rem;
+            padding: 10px;
+        }
     }
 
     &__serviceList {
         display: flex;
         flex-direction: column;
         gap: 15px;
+
+        @include mobile {
+            gap: 10px;
+        }
     }
 
     &__serviceItem {
@@ -43,5 +78,9 @@
         gap: 10px;
         justify-content: space-between;
         align-items: flex-start;
+    }
+
+    &__price {
+        flex-shrink: 0;
     }
 }

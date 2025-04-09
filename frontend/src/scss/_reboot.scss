@@ -1,17 +1,43 @@
 @use "variables";
+@use "_mixins" as *;
 
 *,
 *::after,
 *::before {
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 :root {
     font-size: 62.5%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 html {
     scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: variables.$background-color-lighter-5;
+        border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: variables.$primary;
+        border-radius: 4px;
+        transition: background 0.3s ease;
+        -webkit-transition: background 0.3s ease;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: variables.$primary-darker;
+    }
 }
 
 body {
@@ -34,6 +60,7 @@ img {
     display: block;
     height: auto;
     object-fit: cover;
+    max-width: 100%;
 }
 
 a {
@@ -64,10 +91,19 @@ ul {
 button,
 input {
     font-family: variables.$ff-montserrat;
+    -webkit-appearance: none;
 }
 
 #root {
     display: flex;
     flex-direction: column;
     gap: 80px;
+
+    @include tablet {
+        gap: 60px;
+    }
+
+    @include mobile {
+        gap: 40px;
+    }
 }

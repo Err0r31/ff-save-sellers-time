@@ -23,6 +23,11 @@ app.use("/auth", authRouter);
 app.use("/categories", categoriesRouter);
 app.use("/cities", citiesRouter);
 
+
+app.get("/ping", (req, res) => {
+  res.send("pong")
+})
+
 app.get("/admin", (req, res) => {
   res.send("Панель администратора");
 });

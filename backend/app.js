@@ -19,6 +19,10 @@ app.use("/auth", authRouter);
 app.use("/categories", categoriesRouter);
 app.use("/cities", citiesRouter);
 
+app.get("/ping", (req, res) => {
+  res.send("pong")
+})
+
 sequelize.sync().then(() => {
   app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
